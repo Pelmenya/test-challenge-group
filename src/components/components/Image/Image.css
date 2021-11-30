@@ -1,0 +1,21 @@
+.image {
+    background-color: transparent;
+}
+
+.image_close-cross {
+    width: 30px;
+    height: 30px;
+}
+
+.image_close-cross_absolute {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.image_logo {
+    width: 150px;
+    height: 140px;
+    margin-bottom: 20px;
+}
+

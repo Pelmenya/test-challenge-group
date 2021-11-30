@@ -1,0 +1,12 @@
+.text {
+    font-family: "Play", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #fff;
+}
+
+.text_main{
+    max-width: 490px;
+}

@@ -1,0 +1,84 @@
+.form {
+    display: flex;
+    width: 200px;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-direction: column;
+    background-color: var(--body-color);
+    margin: 0px
+}
+
+.form__fields-group {
+    position: relative;
+    padding-top: 25px;
+    width: 100%;
+}
+
+.form-wrapper {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 500px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+}
+
+.form__button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+input:focus ~ label {
+    color: var(--main);
+}
+
+.form-tab {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-tab__container {
+    width: 100%;
+    height: 650px;
+    border: 3px solid var(--white);
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 50px;
+}
+
+.form-tab__container_edit {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.form-tab__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-tab__wrap_password {
+    height: 100%;
+}
+
+.form-tab__block {
+    width: 100%;
+    margin-bottom: 15px;
+}

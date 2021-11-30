@@ -1,0 +1,34 @@
+.page {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Play", sans-serif;
+}
+
+.header {
+    min-height: 116px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logo {
+    width: 43px;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page__catalog {
+    width: 90%;
+    margin: auto;
+}
+@media screen and (max-width: 414px) {
+    .page__catalog {
+        width: 95%;
+    }
+}
