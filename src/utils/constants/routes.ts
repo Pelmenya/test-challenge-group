@@ -2,7 +2,7 @@ import { Facts } from 'components/Pages/Facts/Facts';
 
 export const ROUTES = [
     {
-        name: 'Cat Facts',
+        name: 'Cat Fact',
         link: '/',
         component: Facts,
     },

@@ -1,6 +1,6 @@
 body {
     background-color: var(--body-color);
-    margin: 0;
+    margin: 0 auto;
 }
 
 :root {

@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-
+import { ConnectedRouter } from 'connected-react-router';
 import { App } from 'components/App/App';
 import { initializeStore } from './redux/store';
+import { getInitialState } from './redux/reducers/getInitalState';
 
-// eslint-disable-next-line no-underscore-dangle
-const initialState = window.__INITIAL_STATE__ || {};
-
-const { store } = initializeStore(initialState);
+const { store, history } = initializeStore(getInitialState());
 
 const Root = () => (
     <Provider store={store}>
-        <App />
+        <ConnectedRouter history={history}>
+            <App />
+        </ConnectedRouter>
     </Provider>
 );
 

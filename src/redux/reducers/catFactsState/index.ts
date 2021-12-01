@@ -2,6 +2,7 @@
 
 import { CatFactResponse, CatFactsResponse } from 'api/catFactsApi.types';
 import { initialNumberFacts } from 'utils/constants/initialNumberFacts';
+import { SetActiveCatFactAction, SET_ACTIVE_CAT_FACT } from '../../actions/catFactsState/setActiveCatFact';
 import { CleanErrorAction, CLEAN_ERROR } from '../../actions/catFactsState/cleanError';
 import {
     GetFactAction,
@@ -16,19 +17,21 @@ import {
     GET_RANDOM_FACTS_FAILED,
 } from '../../actions/catFactsState/getRandomFacts';
 
-export type CatFactsStateAction = GetFactAction | GetRandomFactsAction | CleanErrorAction;
+export type CatFactsStateAction = GetFactAction | GetRandomFactsAction | CleanErrorAction | SetActiveCatFactAction;
 
 export type CatFactsState = {
     isLoading: boolean;
     numberCatFacts: number;
     catFacts: CatFactsResponse | null;
+    activeCatFact: CatFactResponse | null;
     error: string | null;
 };
 
-const initialState: CatFactsState = {
+export const initialState: CatFactsState = {
     isLoading: false,
     numberCatFacts: initialNumberFacts,
     catFacts: null,
+    activeCatFact: null,
     error: null,
 };
 
@@ -48,6 +51,10 @@ export const catFactsState = (state: CatFactsState = initialState, action: CatFa
         case GET_FACT_FAILED:
         case GET_RANDOM_FACTS_FAILED:
             state.error = action.payload.message;
+            break;
+
+        case SET_ACTIVE_CAT_FACT:
+            state.activeCatFact = action.payload;
             break;
 
         case CLEAN_ERROR:

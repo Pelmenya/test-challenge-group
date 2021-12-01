@@ -1,11 +1,17 @@
 
 .card {
     flex-grow: 1;
-    flex-basis: 20%;
+    flex-basis: 30%;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     font-family: Play, sans-serif;
+    cursor: pointer;
+}
+
+.card_big {
+    width: 100%;
+    flex-basis: initial;
 }
 
 .catalog__card {
@@ -38,10 +44,14 @@
 }
 
 .card__title {
-    font-size: 16px;
-    line-height: 20px;
-    max-height: 20px;
+    font-size: 24px;
+    line-height: 24px;
+    max-height: 24px;
     margin: 0 0 5px;
+    display: inline-block;
+}
+
+.card__title_trim {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -49,9 +59,10 @@
 }
 
 .card__text {
-    font-size: 12px;
-    line-height: 16px;
-    margin: 0 0 5px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+    margin-top: 5px;
 }
 @media screen and (max-width: 414px) {
     .card {

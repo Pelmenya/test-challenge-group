@@ -57,6 +57,7 @@ module.exports = {
             { functions: false, classes: true, variables: true, typedefs: true },
         ],
         "class-methods-use-this": "off",
+        "no-underscore-dangle": ["error", { "allow": ["_id"] }]
     },
     ignorePatterns: ['*.config.js', '*.js', '**/*/stories']
 };

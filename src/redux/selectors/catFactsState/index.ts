@@ -8,19 +8,4 @@ export const getNumberCatFactsState = (state: State) => getCatFactsState(state).
 
 export const getCatFacts = (state: State) => getCatFactsState(state).catFacts;
 
-/* export const getUserNickname = (state: State) => {
-    const userProfile = getUserProfile(state);
-    if (!('firstName' in userProfile) && !('displayName' in userProfile)) {
-        return null;
-    }
-    return userProfile.displayName || userProfile.firstName;
-};
-
-export const getUserAvatar = (state: State) => {
-    const userProfile = getUserProfile(state);
-    if (!('avatar' in userProfile)) {
-        return null;
-    }
-    return userProfile.avatar;
-};
- */
+export const getActiveCatFact = (state: State) => getCatFactsState(state).activeCatFact;

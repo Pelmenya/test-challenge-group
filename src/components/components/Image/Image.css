@@ -14,8 +14,13 @@
 }
 
 .image_logo {
-    width: 150px;
-    height: 140px;
+    width: 100px;
+    height: 90px;
     margin-bottom: 20px;
+}
+
+.image_icon {
+    width: 30px;
+    height: 30px;
 }
 

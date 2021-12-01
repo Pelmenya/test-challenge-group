@@ -7,9 +7,7 @@ interface PageProps {
 }
 
 export const Page = (props: PageProps) => (
-    <div className="page-wrap-row">
-        <div className="page-wrap-column">
-            {props.children}
-        </div>
+    <div className="page-wrap-column">
+        <div className="page-wrap-row">{props.children}</div>
     </div>
 );

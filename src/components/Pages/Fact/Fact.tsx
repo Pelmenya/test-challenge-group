@@ -1,61 +1,44 @@
-import { Title } from 'components/components/Title/Title';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { formatDateFromString } from 'utils/constants/functions/formatDateFromString';
+
+import imgLogo from 'images/logo.svg';
+import { Image } from 'components/components/Image/Image';
+import { Title } from 'components/components/Title/Title';
+import { Card } from 'components/components/Card/Card';
 import { Page } from '../components/Page/Page';
 
-import './Fact.css';
+import { getActiveCatFact } from '../../../redux/selectors/catFactsState';
 
-const players = [
-    {
-        display_name: 'Super Tankist 9000',
-    },
-    {
-        display_name: 'Mario Abrams',
-    },
-    {
-        display_name: 'Серый волк',
-    },
-    {
-        display_name: 'Красная шапочка',
-    },
-    {
-        display_name: 'Магомед Магедов',
-    },
-    {
-        display_name: 'Player 1',
-    },
-    {
-        display_name: 'Player 1455',
-    },
-    {
-        display_name: 'Batya Ivanicvich',
-    },
-    {
-        display_name: 'Пуля',
-    },
-    {
-        display_name: 'Ракета',
-    },
-];
+import '../Facts/Facts.css';
 
-export const Fact = () => (
-    <Page>
-        <div className="leader-board-container">
-            <div className="leader-board-container">
-                <Title
-                    className="title title_middle"
-                    text="Лучшие стрелки"
-                />
-            </div>
-            {
-                players.map((item, index) => (
-                    <div
-                        key={item.display_name}
-                        className="leader-name"
-                    >
-                        {`${String(index + 1)}   ${item.display_name}`}
-                    </div>
-                ))
-            }
-        </div>
-    </Page>
-);
+export const Fact = () => {
+    const activeCatFact = useSelector(getActiveCatFact);
+
+    return (
+        <Page>
+            <>
+                <div className="header">
+                    <Image className="image_logo" imagePath={imgLogo} />
+                    <Title className="title title_big" text="Daily Cats" />
+                </div>
+                <main className="catalog">
+                    {(() => {
+                        if (activeCatFact !== null) {
+                            return (
+                                <Card
+                                    id={activeCatFact._id}
+                                    title={activeCatFact.text}
+                                    verified={activeCatFact.status.verified === true ? 'yes' : 'no'}
+                                    date={formatDateFromString(activeCatFact.updatedAt)}
+                                    className
+                                />
+                            );
+                        }
+                        return false;
+                    })()}
+                </main>
+            </>
+        </Page>
+    );
+};
