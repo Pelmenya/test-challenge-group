@@ -13,13 +13,15 @@ import { CatFactResponse } from 'api/catFactsApi.types';
 import { Image } from 'components/components/Image/Image';
 import { formatDateFromString } from 'utils/constants/functions/formatDateFromString';
 import { FormFactsSelection } from 'components/components/Forms/FormFactsSelection/FormFactsSelection';
+import { Spinner } from 'components/components/Spinner/Spinner';
 import { Page } from '../components/Page/Page';
-import { getCatFacts } from '../../../redux/selectors/catFactsState';
+import { getCatFacts, getCatFactsLoaderState } from '../../../redux/selectors/catFactsState';
 import { setActiveCatFact } from '../../../redux/actions/catFactsState/setActiveCatFact';
 
 export const Facts = () => {
     const dispatch = useDispatch();
     const catFacts = useSelector(getCatFacts);
+    const isLoading = useSelector(getCatFactsLoaderState);
 
     useEffect(() => {});
 
@@ -30,33 +32,39 @@ export const Facts = () => {
                     <Image className="image_logo" imagePath={imgLogo} />
                     <Title className="title title_big" text="Daily Cats" />
                 </div>
-                <FormFactsSelection />
-                <main className="catalog page__catalog">
-                    {(() => {
-                        if (catFacts !== null && Array.isArray(catFacts)) {
-                            const cards = catFacts.map((item: CatFactResponse) => (
-                                <Link
-                                    to={`/${item._id}`}
-                                    key={`${item._id}-link`}
-                                    className="card catalog__card"
-                                >
-                                    <Card
-                                        setCardToStore={() => {
-                                            dispatch(setActiveCatFact(item));
-                                        }}
-                                        key={item._id}
-                                        id={item._id}
-                                        title={item.text}
-                                        verified={item.status.verified === true ? 'yes' : 'no'}
-                                        date={formatDateFromString(item.updatedAt)}
-                                    />
-                                </Link>
-                            ));
-                            return cards;
-                        }
-                        return false;
-                    })()}
-                </main>
+                {isLoading
+                    ? <Spinner />
+                    : (
+                        <>
+                            <FormFactsSelection />
+                            <main className="catalog page__catalog">
+                                {(() => {
+                                    if (catFacts !== null && Array.isArray(catFacts)) {
+                                        const cards = catFacts.map((item: CatFactResponse) => (
+                                            <Link
+                                                to={`/${item._id}`}
+                                                key={`${item._id}-link`}
+                                                className="card catalog__card"
+                                            >
+                                                <Card
+                                                    setCardToStore={() => {
+                                                        dispatch(setActiveCatFact(item));
+                                                    }}
+                                                    key={item._id}
+                                                    id={item._id}
+                                                    title={item.text}
+                                                    verified={item.status.verified === true ? 'yes' : 'no'}
+                                                    date={formatDateFromString(item.updatedAt)}
+                                                />
+                                            </Link>
+                                        ));
+                                        return cards;
+                                    }
+                                    return false;
+                                })()}
+                            </main>
+                        </>
+                    )}
             </>
         </Page>
     );

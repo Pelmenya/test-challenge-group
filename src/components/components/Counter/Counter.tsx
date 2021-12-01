@@ -16,9 +16,7 @@ export const Counter = (props: CounterProps) => {
 
     return (
         <div className="field-counter" ref={inputRef}>
-            <p className="field-counter__parameter">
-                {props.label}
-            </p>
+            <p className="field-counter__parameter">{props.label}</p>
             <div className="field-counter__wrap">
                 <button
                     type="button"

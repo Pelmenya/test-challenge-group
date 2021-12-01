@@ -1,8 +1,12 @@
 /* eslint-disable no-param-reassign */
 
+import { Value } from 'utils/types/Value';
 import { CatFactResponse, CatFactsResponse } from 'api/catFactsApi.types';
 import { initialNumberFacts } from 'utils/constants/initialNumberFacts';
-import { SetActiveCatFactAction, SET_ACTIVE_CAT_FACT } from '../../actions/catFactsState/setActiveCatFact';
+import {
+    SetActiveCatFactAction,
+    SET_ACTIVE_CAT_FACT,
+} from '../../actions/catFactsState/setActiveCatFact';
 import { CleanErrorAction, CLEAN_ERROR } from '../../actions/catFactsState/cleanError';
 import {
     GetFactAction,
@@ -16,12 +20,27 @@ import {
     GET_RANDOM_FACTS_FULFILLED,
     GET_RANDOM_FACTS_FAILED,
 } from '../../actions/catFactsState/getRandomFacts';
+import {
+    SetNumberCatFactsAction,
+    SET_NUMBER_CAT_FACTS,
+} from '../../actions/catFactsState/setNumberCatFacts';
+import {
+    SetPrevNumberCatFactsAction,
+    SET_PREV_NUMBER_CAT_FACTS,
+} from '../../actions/catFactsState/setPrevNumberCatFacts';
 
-export type CatFactsStateAction = GetFactAction | GetRandomFactsAction | CleanErrorAction | SetActiveCatFactAction;
+export type CatFactsStateAction =
+    | GetFactAction
+    | GetRandomFactsAction
+    | CleanErrorAction
+    | SetActiveCatFactAction
+    | SetNumberCatFactsAction
+    | SetPrevNumberCatFactsAction;
 
 export type CatFactsState = {
     isLoading: boolean;
-    numberCatFacts: number;
+    numberCatFacts: Value;
+    prevNumberCatFacts: Value;
     catFacts: CatFactsResponse | null;
     activeCatFact: CatFactResponse | null;
     error: string | null;
@@ -30,6 +49,7 @@ export type CatFactsState = {
 export const initialState: CatFactsState = {
     isLoading: false,
     numberCatFacts: initialNumberFacts,
+    prevNumberCatFacts: initialNumberFacts,
     catFacts: null,
     activeCatFact: null,
     error: null,
@@ -55,6 +75,14 @@ export const catFactsState = (state: CatFactsState = initialState, action: CatFa
 
         case SET_ACTIVE_CAT_FACT:
             state.activeCatFact = action.payload;
+            break;
+
+        case SET_NUMBER_CAT_FACTS:
+            state.numberCatFacts = action.payload;
+            break;
+
+        case SET_PREV_NUMBER_CAT_FACTS:
+            state.prevNumberCatFacts = action.payload;
             break;
 
         case CLEAN_ERROR:

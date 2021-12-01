@@ -16,17 +16,25 @@ import { Fact } from 'components/Pages/Fact/Fact';
 
 import { ROUTES } from 'utils/constants/routes';
 
-import { getCatFacts, getNumberCatFactsState } from '../../redux/selectors/catFactsState';
+import {
+    getCatFacts,
+    getNumberCatFactsState,
+    getPrevNumberCatFactsState,
+} from '../../redux/selectors/catFactsState';
 import { getRandomFactsRequested } from '../../redux/actions/catFactsState/getRandomFacts';
+import { setPrevNumberCatFacts } from '../../redux/actions/catFactsState/setPrevNumberCatFacts';
 
 export const App = () => {
     const dispatch = useDispatch();
     const numberCatFacts = useSelector(getNumberCatFactsState);
+    const prevNumberCatFacts = useSelector(getPrevNumberCatFactsState);
+
     const catFacts = useSelector(getCatFacts);
 
     useEffect(() => {
-        if (catFacts === null) {
-            dispatch(getRandomFactsRequested(numberCatFacts));
+        if (catFacts === null || prevNumberCatFacts !== numberCatFacts) {
+            dispatch(getRandomFactsRequested(Number(numberCatFacts)));
+            dispatch(setPrevNumberCatFacts(Number(numberCatFacts)));
         }
     });
 

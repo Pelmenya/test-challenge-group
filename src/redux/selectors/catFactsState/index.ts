@@ -6,6 +6,8 @@ export const getCatFactsLoaderState = (state: State) => getCatFactsState(state).
 
 export const getNumberCatFactsState = (state: State) => getCatFactsState(state).numberCatFacts;
 
+export const getPrevNumberCatFactsState = (state: State) => getCatFactsState(state).prevNumberCatFacts;
+
 export const getCatFacts = (state: State) => getCatFactsState(state).catFacts;
 
 export const getActiveCatFact = (state: State) => getCatFactsState(state).activeCatFact;
