@@ -14,9 +14,7 @@ export type CatFactResponse = {
     }
 };
 
-export type CatFactsResponse = {
-    facts: CatFactResponse[];
-};
+export type CatFactsResponse = CatFactResponse[];
 
 export type IDResponse = {
     id: number;

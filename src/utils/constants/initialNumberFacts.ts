@@ -1,1 +1,1 @@
-export const initialNumberFacts = 5;
+export const initialNumberFacts = 10;

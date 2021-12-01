@@ -2,7 +2,7 @@ import type { ErrorResponse, CatFactsResponse } from '../../../api/catFactsApi.t
 import type { Action } from '..';
 
 export type GetRandomFactsRequestedAction = Action<typeof GET_RANDOM_FACTS_REQUESTED, number>;
-export type GetRandomFactsFulfilledAction = Action<typeof GET_RANDOM_FACTS_FULFILLED, CatFactsResponse>;
+export type GetRandomFactsFulfilledAction = Action<typeof GET_RANDOM_FACTS_FULFILLED, CatFactsResponse | null>;
 export type GetRandomFactsFailedAction = Action<typeof GET_RANDOM_FACTS_FAILED, ErrorResponse>;
 
 export type GetRandomFactsAction =
@@ -19,7 +19,7 @@ export const getRandomFactsRequested = (payload: number) => ({
     payload,
 } as GetRandomFactsRequestedAction);
 
-export const getRandomFactsFulfilled = (payload: CatFactsResponse) => ({
+export const getRandomFactsFulfilled = (payload: CatFactsResponse | null) => ({
     type: GET_RANDOM_FACTS_FULFILLED,
     payload,
 } as GetRandomFactsFulfilledAction);

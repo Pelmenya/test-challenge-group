@@ -11,3 +11,9 @@ export const getPrevNumberCatFactsState = (state: State) => getCatFactsState(sta
 export const getCatFacts = (state: State) => getCatFactsState(state).catFacts;
 
 export const getActiveCatFact = (state: State) => getCatFactsState(state).activeCatFact;
+
+export const getMinDate = (state: State) => getCatFactsState(state).minDate;
+
+export const getMaxDate = (state: State) => getCatFactsState(state).maxDate;
+
+export const getSortCatFacts = (state: State) => getCatFactsState(state).sortCatFacts;

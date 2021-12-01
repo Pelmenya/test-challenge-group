@@ -10,13 +10,13 @@ export interface InputProps {
     defaultValue?: string | number;
     placeholder?: string;
     name?: string;
-    min?: string;
-    max?: string;
+    min?: string | number;
+    max?: string | number;
     id?: string;
     labelText?: string;
     onClick?: () => void;
     onFocus?: () => void;
-    onChange?: () => void;
+    onChange?: (event: any) => void;
     onBlur?: () => void;
 }
 
