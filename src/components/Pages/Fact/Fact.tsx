@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { formatDateFromString } from 'utils/constants/functions/formatDateFromString';
 
@@ -19,8 +20,10 @@ export const Fact = () => {
         <Page>
             <>
                 <div className="header">
-                    <Image className="image_logo" imagePath={imgLogo} />
-                    <Title className="title title_big" text="Daily Cats" />
+                    <Link to="/" className="image image_logo image_logo_link">
+                        <Image className="image image_logo" imagePath={imgLogo} />
+                        <Title className="title title_big" text="Daily Cats" />
+                    </Link>
                 </div>
                 <main className="catalog">
                     {(() => {

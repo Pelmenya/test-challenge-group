@@ -28,6 +28,11 @@ import {
     SetPrevNumberCatFactsAction,
     SET_PREV_NUMBER_CAT_FACTS,
 } from '../../actions/catFactsState/setPrevNumberCatFacts';
+import { SetMaxDate, SET_MAX_DATE } from '../../actions/catFactsState/setMaxDate';
+import { SetPrevMaxDate, SET_PREV_MAX_DATE } from '../../actions/catFactsState/setPrevMaxDate';
+import { SetPrevMinDate, SET_PREV_MIN_DATE } from '../../actions/catFactsState/setPrevMinDate';
+import { SetMinDate, SET_MIN_DATE } from '../../actions/catFactsState/setMinDate';
+import { SetSortCatFacts, SET_SORT_CAT_FACTS } from '../../actions/catFactsState/setSortCatFacts';
 
 export type CatFactsStateAction =
     | GetFactAction
@@ -35,7 +40,12 @@ export type CatFactsStateAction =
     | CleanErrorAction
     | SetActiveCatFactAction
     | SetNumberCatFactsAction
-    | SetPrevNumberCatFactsAction;
+    | SetPrevNumberCatFactsAction
+    | SetPrevMinDate
+    | SetMinDate
+    | SetPrevMaxDate
+    | SetMaxDate
+    | SetSortCatFacts;
 
 export type CatFactsState = {
     isLoading: boolean;
@@ -43,6 +53,11 @@ export type CatFactsState = {
     prevNumberCatFacts: Value;
     catFacts: CatFactsResponse | null;
     activeCatFact: CatFactResponse | null;
+    prevMinDate: Value;
+    prevMaxDate: Value;
+    minDate: Value;
+    maxDate: Value;
+    sortCatFacts: CatFactsResponse | null;
     error: string | null;
 };
 
@@ -52,6 +67,11 @@ export const initialState: CatFactsState = {
     prevNumberCatFacts: initialNumberFacts,
     catFacts: null,
     activeCatFact: null,
+    prevMinDate: '',
+    prevMaxDate: '',
+    minDate: '',
+    maxDate: '',
+    sortCatFacts: null,
     error: null,
 };
 
@@ -83,6 +103,26 @@ export const catFactsState = (state: CatFactsState = initialState, action: CatFa
 
         case SET_PREV_NUMBER_CAT_FACTS:
             state.prevNumberCatFacts = action.payload;
+            break;
+
+        case SET_PREV_MIN_DATE:
+            state.prevMinDate = action.payload;
+            break;
+
+        case SET_PREV_MAX_DATE:
+            state.prevMaxDate = action.payload;
+            break;
+
+        case SET_MIN_DATE:
+            state.minDate = action.payload;
+            break;
+
+        case SET_MAX_DATE:
+            state.maxDate = action.payload;
+            break;
+
+        case SET_SORT_CAT_FACTS:
+            state.sortCatFacts = action.payload;
             break;
 
         case CLEAN_ERROR:

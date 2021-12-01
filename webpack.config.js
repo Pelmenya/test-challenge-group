@@ -25,6 +25,8 @@ module.exports = {
             utils: path.join(__dirname, 'src/utils'),
             assets: path.join(__dirname, 'static/assets'),
             images: path.join(__dirname, 'static/images'),
+            actions: path.join(__dirname, 'src/redux/actions'),
+            selectors: path.join(__dirname, 'src/selectors'),
         },
     },
     output: {
