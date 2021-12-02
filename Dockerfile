@@ -1,17 +1,7 @@
-FROM node:14
-
-ENV PORT=3000
-
-WORKDIR /var/www
-
-COPY ./dist dist
-
-COPY ./package.json .
-
-COPY ./server.js server.js
-
-RUN npm i --only=prod
-
-EXPOSE $PORT
-
-CMD npm run server
+FROM ubuntu:20.04
+RUN apt update && apt install -y nodejs && apt install -y npm
+RUN npm install express
+COPY dist ./dist
+COPY server.js ./
+EXPOSE 3000
+CMD PORT=$PORT node server.js
