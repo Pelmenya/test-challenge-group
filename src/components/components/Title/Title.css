@@ -24,3 +24,21 @@
     font-size: 36px;
     text-align: initial;
 }
+
+@media screen and (max-width: 800px) {
+    .title_big {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .title_big {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .title_big {
+        font-size: 14px;
+    }
+}

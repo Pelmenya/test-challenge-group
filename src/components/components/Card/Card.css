@@ -45,7 +45,7 @@
 }
 
 .card__title {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 24px;
     max-height: 24px;
     margin: 0 0 5px;
@@ -65,8 +65,36 @@
     line-height: 20px;
     margin-top: 5px;
 }
-@media screen and (max-width: 414px) {
+
+@media screen and (max-width: 1145px) {
+    .card__text {
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 5px;
+    }
+
+    .card__title_trim {
+        font-size: 18px;
+        line-height: 20px;
+        max-height: 20px;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .card {
+        flex-basis: 30%;
+    }
+}
+
+@media screen and (max-width: 800px) {
     .card {
         flex-basis: 40%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .card {
+        flex-basis: 60%;
     }
 }

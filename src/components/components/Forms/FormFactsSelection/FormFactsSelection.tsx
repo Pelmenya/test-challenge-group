@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CatFactResponse, CatFactsResponse } from 'api/catFactsApi.types';
+import { CatFactResponse } from 'api/catFactsApi.types';
 
 import { Button } from 'components/components/Button/Button';
 import { Counter } from 'components/components/Counter/Counter';

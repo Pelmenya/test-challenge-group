@@ -19,3 +19,30 @@
 .form-fact-selection__group {
     width: initial;
 }
+
+@media screen and (max-width: 1025px) {
+    .form-fact-selection {
+        width: 92%
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .form-fact-selection {
+        width: 90%
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .form-fact-selection__date {
+        max-width: 140px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .form-fact-selection {
+        flex-direction: column;
+    }
+}

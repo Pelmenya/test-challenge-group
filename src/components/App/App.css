@@ -18,5 +18,5 @@ canvas {
     display: flex;
     min-height: 100vh;
     max-width: 1440px;
-    width: 1440px;
+    min-width: 320px;
 }

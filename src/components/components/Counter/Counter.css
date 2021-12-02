@@ -87,3 +87,34 @@ input[type="number"]:focus {
     -moz-appearance: number-input;
 }
 
+
+@media screen and (max-width: 767px) {
+    .field-counter__parameter {
+        font-size: 18px;
+    }
+
+    .field-counter__input {
+        width: 40%;
+        height: 100%;
+        font-size: 18px;
+    }
+
+    .field-counter__wrap {
+        height: 40%;
+        width: 80%;
+    }
+
+    .triangle-right:after {
+        bottom: 8px;
+        left: -4px;
+    }
+
+    .triangle-left:after {
+        bottom: 8px;
+        right:  -4px;
+    }
+
+    .field-counter {
+        max-width: 160px;
+    }
+}

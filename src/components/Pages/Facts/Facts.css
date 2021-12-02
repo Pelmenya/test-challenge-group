@@ -29,8 +29,19 @@
     margin: auto;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 1025px) {
+    .header {
+        width: 90%
+    }
+
     .page__catalog {
         width: 95%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        min-height: 60px;
     }
 }

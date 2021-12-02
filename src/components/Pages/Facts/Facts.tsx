@@ -15,12 +15,12 @@ import { formatDateFromString } from 'utils/constants/functions/formatDateFromSt
 import { FormFactsSelection } from 'components/components/Forms/FormFactsSelection/FormFactsSelection';
 import { Spinner } from 'components/components/Spinner/Spinner';
 import { Page } from '../components/Page/Page';
-import { getCatFacts, getCatFactsLoaderState } from '../../../redux/selectors/catFactsState';
+import { getCatFactsLoaderState, getSortCatFacts } from '../../../redux/selectors/catFactsState';
 import { setActiveCatFact } from '../../../redux/actions/catFactsState/setActiveCatFact';
 
 export const Facts = () => {
     const dispatch = useDispatch();
-    const catFacts = useSelector(getCatFacts);
+    const catFacts = useSelector(getSortCatFacts);
     const isLoading = useSelector(getCatFactsLoaderState);
 
     useEffect(() => {});

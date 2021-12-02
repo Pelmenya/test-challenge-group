@@ -16,10 +16,9 @@
 .menu-item {
     font-family: 'Play', sans-serif;
     font-size: 24px;
+    min-width: 280px;
     background-color: var(--black);
     border: 3px solid var(--white);
-    width: 280px;
-    min-width: 280px;
     box-sizing: border-box;
     border-radius: 5px;
     color: var(--white);
@@ -53,4 +52,55 @@
 
 .menu-item_disabled {
     opacity: .75;
+}
+
+@media screen and (max-width: 1025px) {
+    .menu-item_button {
+        right: 35px;
+    }
+
+    .menu-items {
+        right: 35px;
+    }
+
+    .page__catalog {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .menu-item {
+        font-size: 18px;
+        margin-top: 5px;
+        min-width: 140px;
+        padding: 5px;
+    }
+
+    .menu-item_button {
+        right: 35px;
+        top: 35px;
+        min-width: 30px;
+        width: 30px;
+        margin-bottom: 5px;
+    }
+
+    .menu-items {
+        font-size: 18px;
+        padding: 5px;
+        right: 35px;
+        top: 80px;
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .menu-item_button {
+        right: 20px;
+        top: 10px;
+    }
+
+    .menu-items {
+        right: 20px;
+        top: 52px;
+    }
 }

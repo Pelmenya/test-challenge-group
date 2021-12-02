@@ -25,7 +25,7 @@ export const Fact = () => {
                         <Title className="title title_big" text="Daily Cats" />
                     </Link>
                 </div>
-                <main className="catalog">
+                <main className="catalog  page__catalog">
                     {(() => {
                         if (activeCatFact !== null) {
                             return (

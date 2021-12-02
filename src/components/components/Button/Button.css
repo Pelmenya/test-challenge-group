@@ -80,30 +80,6 @@
     transition: background 0s;
 }
 
-.button_yandex-logo {
-    background-color: var(--white);
-    color: #000;
-    padding: 11px 10px;
-}
-
-.button_yandex-logo:hover {
-    animation: none;
-    background: var(--white)
-        radial-gradient(
-            circle,
-            transparent 1%,
-            var(--white) 1%
-        )
-        center/15000%;
-    color: #fff;
-}
-
-.button_yandex-logo:active {
-    background-color: var(--grey);
-    background-size: 100%;
-    transition: background 0s;
-}
-
 .button-link {
     font-family: 'Play', sans-serif;
     font-size: 16px;
@@ -150,4 +126,10 @@
 
 .button:disabled:hover {
     animation: none;
+}
+
+@media screen and (max-width: 767px) {
+    .button {
+        font-size: 16px;
+    }
 }
