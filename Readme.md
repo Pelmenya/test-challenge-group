@@ -1,7 +1,5 @@
 # Тестовое задание Challenge Group
 
-«[Сайт проекта на Heroku](https://test-challenge-group.herokuapp.com/)»
-
 ##  Тема: "Разработка приложения для работы с Daily cat facts API"
 
 ### Задание на проект:
